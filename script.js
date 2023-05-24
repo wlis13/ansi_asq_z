@@ -46,7 +46,7 @@ buttonVerify.addEventListener('click', () => {
   const getResult = calculateSampleSize(loteSize.value, inspectionLevel.value)
   result.innerHTML = `
     tamanho da amostra: ${getResult.tamanho_da_amostra}<br>
-    limite acitável: ${getResult.limite_aceitavel}<br>
+    limite aceitável: ${getResult.limite_aceitavel}<br>
     limite de rejeição: ${getResult.limite_de_rejeicao}
   `;
 });
