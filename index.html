@@ -6,9 +6,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ANSI/ASQ Z1.4</title>
 </head>
+<style>
+  * {
+    margin: 0;
+  }
+  #container {
+    background-image: url('./images/capa.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: whitesmoke;
+    height: 700px;
+    padding: 10px;
+    font-family: sans-serif;
+  }
+
+  #container input {
+   font-size: 15pt;
+  }
+
+  .container-header {
+    color: whitesmoke;
+  }
+
+  .container-header h1{
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  .container-header h3{
+    margin-bottom: 30px;
+    margin-top: 10px;
+  }
+
+  .button_verify {
+    padding: 3px 15px;
+    font-size: 15pt;
+  }
+</style>
 <body>
-  <div>
-    <header>
+  <div  id="container">
+    <header class="container-header">
       <h1>Digite a quantidade do lote e o nível de inspeção desejado</h1>
       <h3>Ex: lote: 600 / nível: 2</h3>
     </header>
