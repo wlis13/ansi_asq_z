@@ -1,16 +1,21 @@
+const inspectionLevel = document.querySelector('.input_inspection');
+const loteSize = document.querySelector('.lote_size');
+const buttonVerify = document.querySelector('.button_verify');
+const result = document.querySelector('.result');
+
 function calculateSampleSize(loteSize, inspectionLevel) {
   const tableSample = {
-    NivelI: {
+    1: {
       sampleSize: [50, 80, 125, 200],
       acceptanceLimit: [0, 1, 2, 3],
       bounceLimit: [4, 5, 6, 7]
     },
-    NivelII: {
+    2: {
       sampleSize: [75, 100, 150, 250],
       acceptanceLimit: [0, 1, 2, 3],
       bounceLimit: [4, 5, 6, 7]
     },
-    NivelIII: {
+    3: {
      sampleSize: [100, 150, 200, 300],
      acceptanceLimit: [0, 1, 2, 3],
      bounceLimit: [4, 5, 6, 7]
@@ -37,4 +42,11 @@ function calculateSampleSize(loteSize, inspectionLevel) {
   }
 };
 
-console.log(calculateSampleSize(580, 'NivelI'));
+buttonVerify.addEventListener('click', () => {
+  const getResult = calculateSampleSize(loteSize.value, inspectionLevel.value)
+  result.innerHTML = `
+    tamanho da amostra: ${getResult.tamanho_da_amostra}<br>
+    limite acitável: ${getResult.limite_aceitavel}<br>
+    limite de rejeição: ${getResult.limite_de_rejeicao}
+  `;
+});
